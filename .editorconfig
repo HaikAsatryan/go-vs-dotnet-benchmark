@@ -1,0 +1,41 @@
+root = true
+
+# The C# in services/dotnet uses 3-space indentation. That is a deliberate choice,
+# and without this file `dotnet format` (and Visual Studio, and Rider) silently
+# rewrites all 61 files to its 4-space default. Line endings are LF everywhere, to
+# match .gitattributes.
+
+[*]
+end_of_line = lf
+insert_final_newline = true
+charset = utf-8
+trim_trailing_whitespace = true
+
+[*.cs]
+indent_style = space
+indent_size = 3
+csharp_indent_size = 3
+csharp_new_line_before_open_brace = all
+csharp_prefer_braces = true:suggestion
+dotnet_sort_system_directives_first = true
+
+[*.{csproj,slnx,props,targets}]
+indent_style = space
+indent_size = 2
+
+[*.go]
+indent_style = tab
+
+[*.py]
+indent_style = space
+indent_size = 4
+
+[*.{yaml,yml,json}]
+indent_style = space
+indent_size = 2
+
+[Makefile]
+indent_style = tab
+
+[*.md]
+trim_trailing_whitespace = false

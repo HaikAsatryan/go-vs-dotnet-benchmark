@@ -1,0 +1,85 @@
+# spec/slo.yaml — frozen measurement numerics.
+slo:
+  metric: p99_latency_ms
+  threshold_ms: 20              # locked decision (user, 2026-06-05)
+  applies_to: mixed_workload    # mixed workload only (isolation cells descoped 2026-08-13)
+  error_rate_max: 0.001         # headline valid only where errors < 0.1%
+
+equivalence:
+  margin_pct: 5.0               # pre-registered +/-5% margin
+  decision_rule: paired_difference_ci   # paired by interleave block (RCB)
+  inside_margin: tie
+  outside_margin: report_effect_size
+
+ladder:
+  # The once-planned start_rate_strategy (0.25x the lowest isolation pre-probe
+  # knee) was retired with the isolation cells in the 2026-08-13 descope; the
+  # ladder always seeds at start_rate_rps_default.
+  start_rate_rps_default: 500
+  step_factor: 1.2
+  reps_per_rung: 3              # interleaved
+  confirm_reps: 10              # randomized complete blocks at bracket rates
+  window_seconds: 120
+  warmup_discard_seconds: 30
+  interleave: randomized_complete_blocks   # seeded within-block order; block_id = pairing key
+  knee_fit: isotonic            # PAVA monotone fit of p99-vs-rate; knee = SLO crossing
+  knee_ci: bootstrap_over_reps
+
+warmup:
+  hard_cap_seconds: 180         # not steady by then -> probe flagged under-warmed, recorded
+  poll_hz: 1                    # GET /runtime-stats poll frequency
+  per_endpoint_min_calls:       # placeholders, tunable after smoke calibration
+    get_invoice:    20000
+    list_invoices:  20000
+    pricing_quote:  15000
+    create_invoice: 10000
+    pdf_stub:        5000
+    healthz:         2000
+  gates:                        # ALL must hold
+    p99_flat: true              # across trailing sub-windows
+    p999_flat: true
+    gc_steady: true             # .NET: DATAS heap count + committed stable; Go: cycle cadence flat
+    pools_warm: true            # db_pool.total == max (min=max policy) ; redis ready
+    hot_set_touched: true       # Zipf-hot set warm-touched (page-cache determinism)
+    major_faults_asserted_equal: true
+  note: durations may differ per language; published; overlaid on the cold-start curve.
+
+stationarity:
+  test: mann_kendall            # per-second p99: no positive trend
+  alpha: 0.05
+  direction: no_positive_trend
+  # Practical-significance band: gate fails only if MK is significant AND the
+  # Theil-Sen slope over the 120 s window exceeds this. Below it, a significant
+  # MK is a window-length artifact (open-loop p99 wobble), not real drift, and
+  # must not bias the knee low. Pre-registered (~0.017 ms/s).
+  min_slope_ms_per_min: 1.0
+  supra_knee_policy: saturation_reporting_only
+  window_length_sensitivity_rate: near_knee
+
+# hysteresis (the descending re-descent pass + metastability band) was descoped
+# 2026-08-13 without ever running: the ladder is ascending-only.
+
+soak:
+  duration_seconds: 600
+  pass_criteria:
+    p99_trend: none
+    anon_rss_slope: in_noise
+    pg_bloat: steady
+    errors: ~0
+
+# 2026-08-13 descope: the once-planned bench-tier CO checks (oha tail
+# cross-check, toxiproxy sustained-degradation, self-saturation
+# characterization) were removed and will not run. CO safety rests on the
+# per-probe achieved-vs-offered tolerance below plus smoke's docker-pause
+# stall check.
+co_validation:
+  achieved_vs_offered_tolerance_pct: 2.0
+  stall_test: { freeze_seconds: 1.0, method: docker_pause }
+
+capacity_gate:                  # runs FIRST in bench-all
+  headroom_factor: 1.3
+  levers_in_order:
+    - { name: write_share, from: 0.15, to: 0.10 }
+    - { name: cache_hit_rate, from: 0.80, to: 0.90 }
+    - { name: pg_cores, from: 3, to: 4, taken_from: vegeta }
+  never: synchronous_commit_off

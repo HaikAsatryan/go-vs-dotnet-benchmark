@@ -1,0 +1,60 @@
+# infra/compose.bench.yaml: Linux-only RESOURCE OVERLAY (the core/memory ledger).
+#
+# Merge ONTO the base: docker compose -f infra/compose.yaml -f infra/compose.bench.yaml ...
+# Adds ONLY cpuset_cpus + mem_limit. There is deliberately NO `cpus:` quota
+# here: CFS quota throttling injects period stalls into p99. (The once-planned
+# compose.bench.quota.yaml CFS-quota extra was deleted in the 2026-08-13
+# descope.)
+#
+# Resource ledger (AMD Ryzen 9 7950X, two 8-core CCDs, SMT siblings left idle;
+# physical cores only):
+#
+#   | service  | cores            | mem  | notes                                  |
+#   |----------|------------------|------|----------------------------------------|
+#   | sut-*     | 6 phys, CCD0    | 12g  | NO cpus: quota. SUT_CPUS/SUT_MEM knobs |
+#   | (spare)   | 2 phys, CCD0    |:    | left idle so SUT L3 stays private      |
+#   | postgres  | 3 phys, CCD1    | 8g   | matches the 8GB/3-core PG rescale (R1) |
+#   | vegeta    | 3 phys, CCD1    | 4g   | <=60% CPU at max rate asserted         |
+#   | redis     | 1 core, CCD1    | 2g   |                                        |
+#   | runner+housekeeping | 1 core, CCD1 | ~1g | NOT a container: systemd CPUAffinity |
+#
+# CORE-ID NOTE: the numeric cpuset ids below are PLACEHOLDERS finalized on the
+# Fedora box once the real CCD-to-logical-core mapping is read from
+# /sys/devices/system/cpu/cpu*/topology (CCD0 vs CCD1, SMT sibling pairing).
+# Defaults assume: CCD0 = physical cores 0-7 (SUT 0-5, spare 6-7), CCD1 =
+# physical cores 8-15 (PG 8-10, vegeta 11-13, redis 14, runner 15). The mapping
+# is NOT read back off the containers: `manifest.topology` stays
+# `source: not_measured`, so the cpusets actually in force are evidenced by this
+# file and the environment it was launched with, not by the run artifact.
+#
+# All cpusets are env-parameterized so the core-rebalance capacity lever
+# (vegeta core -> PG, used if PG becomes the capacity gate) is a pure env
+# edit, no file edit. (The memory-pressure sweep that also motivated the
+# parameterization was descoped at scope freeze.)
+
+services:
+  sut-go:
+    cpuset: ${SUT_CPUS:-0-5}
+    mem_limit: ${SUT_MEM:-12g}
+    environment:
+      # Pin runtime parallelism to the SUT core count; the runner asserts the
+      # SUT's reported processor_count matches SUT_CORES (default 6).
+      GOMAXPROCS: ${SUT_CORES:-6}
+
+  sut-dotnet:
+    cpuset: ${SUT_CPUS:-0-5}
+    mem_limit: ${SUT_MEM:-12g}
+    environment:
+      DOTNET_PROCESSOR_COUNT: ${SUT_CORES:-6}
+
+  postgres:
+    cpuset: ${PG_CPUS:-8-10}
+    mem_limit: ${PG_MEM:-8g}
+
+  vegeta:
+    cpuset: ${VEGETA_CPUS:-11-13}
+    mem_limit: ${VEGETA_MEM:-4g}
+
+  redis:
+    cpuset: ${REDIS_CPUS:-14}
+    mem_limit: ${REDIS_MEM:-2g}

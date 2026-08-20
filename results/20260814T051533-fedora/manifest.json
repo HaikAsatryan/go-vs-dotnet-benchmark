@@ -1,0 +1,5980 @@
+{
+  "schema_version": 2,
+  "created_utc": "2026-08-14T05:15:33.748350Z",
+  "identity": {
+    "run_id": "20260814T051533-fedora",
+    "git_sha": "458cd717bfe5fc6fd6682dcd4f9308ed93a0af7b",
+    "git_dirty": false,
+    "git_sha_changed_during_run": [],
+    "schema_sql_sha256": null,
+    "generated_code_hashes": {},
+    "config_hash": "7889756b00193358a813ff55c42f3e1e806a7cee3bc5d26b65049420b0ec9aaf"
+  },
+  "versions": {
+    "image_digests": {},
+    "go": null,
+    "dotnet": null,
+    "pgx": null,
+    "npgsql": null,
+    "sqlc": null,
+    "redis": null,
+    "postgres": null,
+    "vegeta": null
+  },
+  "knobs_go": {
+    "db_pool_max": null,
+    "db_pool_min": null,
+    "db_conn_lifetime_seconds": null,
+    "redis_pool_max": null,
+    "cache_ttl_seconds": null,
+    "log_queue_len": null,
+    "gogc": null,
+    "gomemlimit": null,
+    "gc_dynamic_adaptation_mode": null,
+    "max_auto_prepare": null,
+    "data_layer": null,
+    "gomaxprocs": 6,
+    "processor_count": 6
+  },
+  "knobs_dotnet": {
+    "db_pool_max": null,
+    "db_pool_min": null,
+    "db_conn_lifetime_seconds": null,
+    "redis_pool_max": null,
+    "cache_ttl_seconds": null,
+    "log_queue_len": null,
+    "gogc": null,
+    "gomemlimit": null,
+    "gc_dynamic_adaptation_mode": null,
+    "max_auto_prepare": null,
+    "data_layer": null,
+    "gomaxprocs": null,
+    "processor_count": 6
+  },
+  "knobs_by_cell": {
+    "headline.mixed.gc-default": {
+      "cell_id": "headline.mixed.gc-default",
+      "extra_env": {},
+      "go": {
+        "db_pool_max": null,
+        "db_pool_min": null,
+        "db_conn_lifetime_seconds": null,
+        "redis_pool_max": null,
+        "cache_ttl_seconds": null,
+        "log_queue_len": null,
+        "gogc": null,
+        "gomemlimit": null,
+        "gc_dynamic_adaptation_mode": null,
+        "max_auto_prepare": null,
+        "data_layer": "sqlc",
+        "gomaxprocs": 6,
+        "processor_count": 6
+      },
+      "dotnet": {
+        "db_pool_max": null,
+        "db_pool_min": null,
+        "db_conn_lifetime_seconds": null,
+        "redis_pool_max": null,
+        "cache_ttl_seconds": null,
+        "log_queue_len": null,
+        "gogc": null,
+        "gomemlimit": null,
+        "gc_dynamic_adaptation_mode": null,
+        "max_auto_prepare": null,
+        "data_layer": "efcore",
+        "gomaxprocs": null,
+        "processor_count": 6
+      }
+    },
+    "headline.mixed.gc-generous": {
+      "cell_id": "headline.mixed.gc-generous",
+      "extra_env": {
+        "GOGC": "off",
+        "GOMEMLIMIT": "10GiB",
+        "DOTNET_GCDynamicAdaptationMode": "0"
+      },
+      "go": {
+        "db_pool_max": null,
+        "db_pool_min": null,
+        "db_conn_lifetime_seconds": null,
+        "redis_pool_max": null,
+        "cache_ttl_seconds": null,
+        "log_queue_len": null,
+        "gogc": "off",
+        "gomemlimit": "10GiB",
+        "gc_dynamic_adaptation_mode": null,
+        "max_auto_prepare": null,
+        "data_layer": "sqlc",
+        "gomaxprocs": 6,
+        "processor_count": 6
+      },
+      "dotnet": {
+        "db_pool_max": null,
+        "db_pool_min": null,
+        "db_conn_lifetime_seconds": null,
+        "redis_pool_max": null,
+        "cache_ttl_seconds": null,
+        "log_queue_len": null,
+        "gogc": null,
+        "gomemlimit": null,
+        "gc_dynamic_adaptation_mode": "0",
+        "max_auto_prepare": null,
+        "data_layer": "efcore",
+        "gomaxprocs": null,
+        "processor_count": 6
+      }
+    },
+    "variant.ado": {
+      "cell_id": "variant.ado",
+      "extra_env": {
+        "DATA_LAYER": "ado"
+      },
+      "go": {
+        "db_pool_max": null,
+        "db_pool_min": null,
+        "db_conn_lifetime_seconds": null,
+        "redis_pool_max": null,
+        "cache_ttl_seconds": null,
+        "log_queue_len": null,
+        "gogc": null,
+        "gomemlimit": null,
+        "gc_dynamic_adaptation_mode": null,
+        "max_auto_prepare": null,
+        "data_layer": "sqlc",
+        "gomaxprocs": 6,
+        "processor_count": 6
+      },
+      "dotnet": {
+        "db_pool_max": null,
+        "db_pool_min": null,
+        "db_conn_lifetime_seconds": null,
+        "redis_pool_max": null,
+        "cache_ttl_seconds": null,
+        "log_queue_len": null,
+        "gogc": null,
+        "gomemlimit": null,
+        "gc_dynamic_adaptation_mode": null,
+        "max_auto_prepare": null,
+        "data_layer": "ado",
+        "gomaxprocs": null,
+        "processor_count": 6
+      }
+    },
+    "variant.dapper": {
+      "cell_id": "variant.dapper",
+      "extra_env": {
+        "DATA_LAYER": "dapper"
+      },
+      "go": {
+        "db_pool_max": null,
+        "db_pool_min": null,
+        "db_conn_lifetime_seconds": null,
+        "redis_pool_max": null,
+        "cache_ttl_seconds": null,
+        "log_queue_len": null,
+        "gogc": null,
+        "gomemlimit": null,
+        "gc_dynamic_adaptation_mode": null,
+        "max_auto_prepare": null,
+        "data_layer": "sqlc",
+        "gomaxprocs": 6,
+        "processor_count": 6
+      },
+      "dotnet": {
+        "db_pool_max": null,
+        "db_pool_min": null,
+        "db_conn_lifetime_seconds": null,
+        "redis_pool_max": null,
+        "cache_ttl_seconds": null,
+        "log_queue_len": null,
+        "gogc": null,
+        "gomemlimit": null,
+        "gc_dynamic_adaptation_mode": null,
+        "max_auto_prepare": null,
+        "data_layer": "dapper",
+        "gomaxprocs": null,
+        "processor_count": 6
+      }
+    },
+    "variant.prepared-parity": {
+      "cell_id": "variant.prepared-parity",
+      "extra_env": {
+        "MAX_AUTO_PREPARE": "20"
+      },
+      "go": {
+        "db_pool_max": null,
+        "db_pool_min": null,
+        "db_conn_lifetime_seconds": null,
+        "redis_pool_max": null,
+        "cache_ttl_seconds": null,
+        "log_queue_len": null,
+        "gogc": null,
+        "gomemlimit": null,
+        "gc_dynamic_adaptation_mode": null,
+        "max_auto_prepare": null,
+        "data_layer": "sqlc",
+        "gomaxprocs": 6,
+        "processor_count": 6
+      },
+      "dotnet": {
+        "db_pool_max": null,
+        "db_pool_min": null,
+        "db_conn_lifetime_seconds": null,
+        "redis_pool_max": null,
+        "cache_ttl_seconds": null,
+        "log_queue_len": null,
+        "gogc": null,
+        "gomemlimit": null,
+        "gc_dynamic_adaptation_mode": null,
+        "max_auto_prepare": 20,
+        "data_layer": "efcore",
+        "gomaxprocs": null,
+        "processor_count": 6
+      }
+    }
+  },
+  "capacity_gate": {
+    "verdict": "pass",
+    "detail": "",
+    "pg_knee_rps": 3715.0219544047814,
+    "pg_knee_measured": true,
+    "pg_knee_usable_rungs": 12,
+    "pg_knee_measured_at_cores": 3,
+    "pg_capacity_projected_rps": 3715.0219544047814,
+    "pg_capacity_projection_basis": "no scaling applied: pg_cores unchanged at 3, so the projection equals the measured knee",
+    "projected_db_rps": 2160.0,
+    "headroom_factor": 1.3,
+    "levers_fired": [],
+    "levers_applied": [],
+    "levers_not_applied": {},
+    "remeasured_pg_knee_rps": null,
+    "degraded": false,
+    "degraded_allowed_by": null
+  },
+  "effective_workload": {
+    "spec_mix": {
+      "get_invoice": 30,
+      "list_invoices": 25,
+      "pricing_quote": 20,
+      "create_invoice": 15,
+      "pdf_stub": 8,
+      "healthz": 2
+    },
+    "effective_mix": {
+      "get_invoice": 30,
+      "list_invoices": 25,
+      "pricing_quote": 20,
+      "create_invoice": 15,
+      "pdf_stub": 8,
+      "healthz": 2
+    },
+    "spec_write_share": 0.15,
+    "effective_write_share": 0.15,
+    "spec_cache_hit_rate": 0.8,
+    "effective_cache_hit_rate": 0.8,
+    "spec_pg_cores": 3,
+    "effective_pg_cores": 3,
+    "write_share_absorbed_by": "pricing_quote",
+    "levers_fired": [],
+    "levers_applied": [],
+    "levers_not_applied": {},
+    "env_overrides": {},
+    "note": "spec/ is frozen; the levers produce this effective workload in run state only. Any difference between spec_* and effective_* was APPLIED to the measured cells."
+  },
+  "working_set": {
+    "targets_file": "io/go/targets.txt",
+    "target_count": 1000000,
+    "distinct_invoice_ids": 137028,
+    "distinct_customer_ids": 112014,
+    "distinct_customer_ids_list_urls": 78144,
+    "distinct_customer_ids_create_bodies": 52107,
+    "seeded_invoices": 5000000,
+    "seeded_customers": 1000000,
+    "cache_ttl_seconds": 300,
+    "cache_ttl_source": "infra/compose.yaml default (no override in force)",
+    "replay_period_seconds": {
+      "1244": 803.859,
+      "1493": 669.792,
+      "1037": 964.32,
+      "9244": 108.178,
+      "11093": 90.147,
+      "13312": 75.12
+    },
+    "note": "distinct ids counted over 1000000 generated REQUESTS (the file itself is longer: a POST target spans several lines); 150018 create bodies read for their customer_id. The targets file is replayed in order, so these are the only keys the READ path asks for; the write path additionally inserts invoice ids that appear in no target. distinct_customer_ids is the UNION of 78144 list-invoices URL customers and 52107 create-body customers"
+  },
+  "unimplemented_warmup_gates": [
+    "hot_set_touched",
+    "major_faults_asserted_equal"
+  ],
+  "host_state": {
+    "source": "not_measured",
+    "note": "not populated by the runner: host tuning is applied by infra/host-setup.sh and only partially re-checked by the doctor phase; nothing reads it back into the manifest",
+    "governor": null,
+    "boost_off": null,
+    "cstate_cap": null,
+    "thp_mode": null,
+    "irq_mask": null,
+    "cpuaffinity_dropin_present": null,
+    "isolcpus": null,
+    "nohz_full": null,
+    "turbostat_snapshot": null,
+    "btrfs_cow_off": null,
+    "noatime": null,
+    "observability_stack": null,
+    "tier": null
+  },
+  "topology": {
+    "source": "not_measured",
+    "note": "not populated by the runner: cpusets/mem limits are declared in infra/compose.bench.yaml and never read back off the containers",
+    "containers": {},
+    "ccd_mapping": {}
+  },
+  "postgres_config": {
+    "source": "not_measured",
+    "note": "not populated by the runner: no phase reads pg_settings back; the declared values live in spec/postgres/postgresql.conf",
+    "values": {}
+  },
+  "achieved_vs_offered": [
+    {
+      "probe_id": "headline.mixed.gc-default/ladder/r500/b0/dotnet",
+      "offered_rate": 500.0,
+      "achieved_rate": 500.00657374476043,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/ladder/r500/b0/go",
+      "offered_rate": 500.0,
+      "achieved_rate": 500.00612595422035,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/ladder/r500/b1/dotnet",
+      "offered_rate": 500.0,
+      "achieved_rate": 500.0067398825175,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/ladder/r500/b1/go",
+      "offered_rate": 500.0,
+      "achieved_rate": 500.00793965524093,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/ladder/r500/b2/dotnet",
+      "offered_rate": 500.0,
+      "achieved_rate": 500.00843599649636,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/ladder/r500/b2/go",
+      "offered_rate": 500.0,
+      "achieved_rate": 500.0071585399879,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/ladder/r600/b0/dotnet",
+      "offered_rate": 600.0,
+      "achieved_rate": 600.0078903037601,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/ladder/r600/b0/go",
+      "offered_rate": 600.0,
+      "achieved_rate": 600.0102119788045,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/ladder/r600/b1/go",
+      "offered_rate": 600.0,
+      "achieved_rate": 600.0089281478511,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/ladder/r600/b1/dotnet",
+      "offered_rate": 600.0,
+      "achieved_rate": 600.0079338199077,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/ladder/r600/b2/go",
+      "offered_rate": 600.0,
+      "achieved_rate": 600.0082068972537,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/ladder/r600/b2/dotnet",
+      "offered_rate": 600.0,
+      "achieved_rate": 600.0064926052557,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/ladder/r720/b0/dotnet",
+      "offered_rate": 720.0,
+      "achieved_rate": 720.0075522811408,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/ladder/r720/b0/go",
+      "offered_rate": 720.0,
+      "achieved_rate": 720.0100633886533,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/ladder/r720/b1/go",
+      "offered_rate": 720.0,
+      "achieved_rate": 720.0095815035055,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/ladder/r720/b1/dotnet",
+      "offered_rate": 720.0,
+      "achieved_rate": 720.0106861225994,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/ladder/r720/b2/go",
+      "offered_rate": 720.0,
+      "achieved_rate": 720.0082648248701,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/ladder/r720/b2/dotnet",
+      "offered_rate": 720.0,
+      "achieved_rate": 720.0073177043726,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/ladder/r864/b0/go",
+      "offered_rate": 864.0,
+      "achieved_rate": 864.0142560120205,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/ladder/r864/b0/dotnet",
+      "offered_rate": 864.0,
+      "achieved_rate": 864.0136402265389,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/ladder/r864/b1/go",
+      "offered_rate": 864.0,
+      "achieved_rate": 864.0154753284531,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/ladder/r864/b1/dotnet",
+      "offered_rate": 864.0,
+      "achieved_rate": 864.0136378072625,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/ladder/r864/b2/go",
+      "offered_rate": 864.0,
+      "achieved_rate": 864.0131744224828,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/ladder/r864/b2/dotnet",
+      "offered_rate": 864.0,
+      "achieved_rate": 864.0132962358148,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/ladder/r1037/b0/dotnet",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1037.0037008674494,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/ladder/r1037/b0/go",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1037.008775557137,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/ladder/r1037/b1/go",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1037.0083351100448,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/ladder/r1037/b1/dotnet",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1037.0032756081716,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/ladder/r1037/b2/dotnet",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1037.0053630547109,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/ladder/r1037/b2/go",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1037.001276920164,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/ladder/r1244/b0/go",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0080815875644,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/ladder/r1244/b0/dotnet",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0012039262967,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/ladder/r1244/b1/go",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.001519656303,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/ladder/r1244/b1/dotnet",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0078055477095,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/ladder/r1244/b2/go",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0061109726857,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/ladder/r1244/b2/dotnet",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0062259505262,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/ladder/r1493/b0/go",
+      "offered_rate": 1493.0,
+      "achieved_rate": 1493.012227048517,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/ladder/r1493/b0/dotnet",
+      "offered_rate": 1493.0,
+      "achieved_rate": 1493.0027188326012,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/ladder/r1493/b1/dotnet",
+      "offered_rate": 1493.0,
+      "achieved_rate": 1493.003197266347,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/ladder/r1493/b1/go",
+      "offered_rate": 1493.0,
+      "achieved_rate": 1493.0054481386226,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/ladder/r1493/b2/dotnet",
+      "offered_rate": 1493.0,
+      "achieved_rate": 1493.0038990916578,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/ladder/r1493/b2/go",
+      "offered_rate": 1493.0,
+      "achieved_rate": 1493.0029764134088,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/confirm/r1244/b0/go",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0074393407217,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/confirm/r1244/b0/dotnet",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.001722907061,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/confirm/r1493/b0/go",
+      "offered_rate": 1493.0,
+      "achieved_rate": 1493.0036981079518,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/confirm/r1493/b0/dotnet",
+      "offered_rate": 1493.0,
+      "achieved_rate": 1493.0027416241455,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/confirm/r1244/b1/dotnet",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.001816581155,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/confirm/r1244/b1/go",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.007783564827,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/confirm/r1493/b1/go",
+      "offered_rate": 1493.0,
+      "achieved_rate": 1493.0023306761716,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/confirm/r1493/b1/dotnet",
+      "offered_rate": 1493.0,
+      "achieved_rate": 1493.003434009624,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/confirm/r1244/b2/dotnet",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0028140453148,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/confirm/r1244/b2/go",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.004482199983,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/confirm/r1493/b2/dotnet",
+      "offered_rate": 1493.0,
+      "achieved_rate": 1493.012539215112,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/confirm/r1493/b2/go",
+      "offered_rate": 1493.0,
+      "achieved_rate": 1493.0038361907023,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/confirm/r1244/b3/dotnet",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.001356151763,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/confirm/r1244/b3/go",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0055149874493,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/confirm/r1493/b3/dotnet",
+      "offered_rate": 1493.0,
+      "achieved_rate": 1493.0049005024266,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/confirm/r1493/b3/go",
+      "offered_rate": 1493.0,
+      "achieved_rate": 1493.002876929452,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/confirm/r1244/b4/go",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0023799944297,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/confirm/r1244/b4/dotnet",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1243.97071652044,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/confirm/r1493/b4/go",
+      "offered_rate": 1493.0,
+      "achieved_rate": 1493.0012173683094,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/confirm/r1493/b4/dotnet",
+      "offered_rate": 1493.0,
+      "achieved_rate": 1493.0032350269678,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/confirm/r1244/b5/go",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0064078044395,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/confirm/r1244/b5/dotnet",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0091856083254,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/confirm/r1493/b5/dotnet",
+      "offered_rate": 1493.0,
+      "achieved_rate": 1493.0021105274718,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/confirm/r1493/b5/go",
+      "offered_rate": 1493.0,
+      "achieved_rate": 1493.0067126123383,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/confirm/r1244/b6/dotnet",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0010700707553,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/confirm/r1244/b6/go",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0055388413612,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/confirm/r1493/b6/dotnet",
+      "offered_rate": 1493.0,
+      "achieved_rate": 1493.0041684490463,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/confirm/r1493/b6/go",
+      "offered_rate": 1493.0,
+      "achieved_rate": 1493.0041735438667,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/confirm/r1244/b7/dotnet",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0071634597498,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/confirm/r1244/b7/go",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0021237915257,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/confirm/r1493/b7/go",
+      "offered_rate": 1493.0,
+      "achieved_rate": 1493.0058134535948,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/confirm/r1493/b7/dotnet",
+      "offered_rate": 1493.0,
+      "achieved_rate": 1493.002342205731,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/confirm/r1244/b8/go",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0027994727998,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/confirm/r1244/b8/dotnet",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0023099564967,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/confirm/r1493/b8/dotnet",
+      "offered_rate": 1493.0,
+      "achieved_rate": 1493.0016477637103,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/confirm/r1493/b8/go",
+      "offered_rate": 1493.0,
+      "achieved_rate": 1493.0015912827696,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/confirm/r1244/b9/go",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0016153726187,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/confirm/r1244/b9/dotnet",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.008332378177,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/confirm/r1493/b9/go",
+      "offered_rate": 1493.0,
+      "achieved_rate": 1493.0053763496853,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/confirm/r1493/b9/dotnet",
+      "offered_rate": 1493.0,
+      "achieved_rate": 1493.0009815246738,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/soak/r1244/b0/dotnet",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0016941238573,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-default/soak/r1244/b0/go",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0018380645492,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/ladder/r500/b0/go",
+      "offered_rate": 500.0,
+      "achieved_rate": 500.008745369627,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/ladder/r500/b0/dotnet",
+      "offered_rate": 500.0,
+      "achieved_rate": 500.00321148312713,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/ladder/r500/b1/dotnet",
+      "offered_rate": 500.0,
+      "achieved_rate": 500.0052807516054,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/ladder/r500/b1/go",
+      "offered_rate": 500.0,
+      "achieved_rate": 500.00847791458096,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/ladder/r500/b2/go",
+      "offered_rate": 500.0,
+      "achieved_rate": 500.0085273079275,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/ladder/r500/b2/dotnet",
+      "offered_rate": 500.0,
+      "achieved_rate": 500.00860957324693,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/ladder/r600/b0/dotnet",
+      "offered_rate": 600.0,
+      "achieved_rate": 600.010869981924,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/ladder/r600/b0/go",
+      "offered_rate": 600.0,
+      "achieved_rate": 600.0058726824801,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/ladder/r600/b1/dotnet",
+      "offered_rate": 600.0,
+      "achieved_rate": 600.0073046139279,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/ladder/r600/b1/go",
+      "offered_rate": 600.0,
+      "achieved_rate": 600.0074870634257,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/ladder/r600/b2/go",
+      "offered_rate": 600.0,
+      "achieved_rate": 600.0085853828463,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/ladder/r600/b2/dotnet",
+      "offered_rate": 600.0,
+      "achieved_rate": 600.0079131093607,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/ladder/r720/b0/dotnet",
+      "offered_rate": 720.0,
+      "achieved_rate": 720.0101882881663,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/ladder/r720/b0/go",
+      "offered_rate": 720.0,
+      "achieved_rate": 720.0121382226305,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/ladder/r720/b1/dotnet",
+      "offered_rate": 720.0,
+      "achieved_rate": 720.007418278431,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/ladder/r720/b1/go",
+      "offered_rate": 720.0,
+      "achieved_rate": 720.0074237959553,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/ladder/r720/b2/go",
+      "offered_rate": 720.0,
+      "achieved_rate": 720.0082758531236,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/ladder/r720/b2/dotnet",
+      "offered_rate": 720.0,
+      "achieved_rate": 720.0126442980493,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/ladder/r864/b0/dotnet",
+      "offered_rate": 864.0,
+      "achieved_rate": 864.0106864009733,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/ladder/r864/b0/go",
+      "offered_rate": 864.0,
+      "achieved_rate": 864.0110638632754,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/ladder/r864/b1/dotnet",
+      "offered_rate": 864.0,
+      "achieved_rate": 864.0094582755394,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/ladder/r864/b1/go",
+      "offered_rate": 864.0,
+      "achieved_rate": 864.0097186981195,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/ladder/r864/b2/dotnet",
+      "offered_rate": 864.0,
+      "achieved_rate": 864.0142357649529,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/ladder/r864/b2/go",
+      "offered_rate": 864.0,
+      "achieved_rate": 864.0135935546679,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/ladder/r1037/b0/go",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1037.005903225238,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/ladder/r1037/b0/dotnet",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1037.0031514352938,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/ladder/r1037/b1/dotnet",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1037.0033744435473,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/ladder/r1037/b1/go",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1037.0069866012457,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/ladder/r1037/b2/dotnet",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1037.0007105615286,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/ladder/r1037/b2/go",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1037.0028362200405,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/ladder/r1244/b0/dotnet",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.009047605236,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/ladder/r1244/b0/go",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0033665530107,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/ladder/r1244/b1/dotnet",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.010048470433,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/ladder/r1244/b1/go",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0026117022785,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/ladder/r1244/b2/go",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.008614065081,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/ladder/r1244/b2/dotnet",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0074880542727,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/confirm/r1037/b0/dotnet",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1037.006947350268,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/confirm/r1037/b0/go",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1037.0040720643817,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/confirm/r1244/b0/dotnet",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0013413480317,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/confirm/r1244/b0/go",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0051804729733,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/confirm/r1037/b1/dotnet",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1037.0030808497363,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/confirm/r1037/b1/go",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1037.0054347467242,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/confirm/r1244/b1/go",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0031617688026,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/confirm/r1244/b1/dotnet",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.00817562173,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/confirm/r1037/b2/go",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1037.000832163955,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/confirm/r1037/b2/dotnet",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1037.0216848147772,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/confirm/r1244/b2/go",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0075786393033,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/confirm/r1244/b2/dotnet",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.002325724361,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/confirm/r1037/b3/go",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1037.0001362010873,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/confirm/r1037/b3/dotnet",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1037.0034558917919,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/confirm/r1244/b3/go",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0080589537408,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/confirm/r1244/b3/dotnet",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0089191811146,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/confirm/r1037/b4/go",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1037.0029794651105,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/confirm/r1037/b4/dotnet",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1037.0028317695578,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/confirm/r1244/b4/go",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0034748127061,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/confirm/r1244/b4/dotnet",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0075382191787,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/confirm/r1037/b5/dotnet",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1037.0022939009243,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/confirm/r1037/b5/go",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1037.0046375365894,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/confirm/r1244/b5/go",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.002139267576,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/confirm/r1244/b5/dotnet",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.009133131486,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/confirm/r1037/b6/dotnet",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1037.0036549712322,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/confirm/r1037/b6/go",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1037.002191125138,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/confirm/r1244/b6/go",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1243.997547686901,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/confirm/r1244/b6/dotnet",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0016634951346,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/confirm/r1037/b7/dotnet",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1037.0026476578767,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/confirm/r1037/b7/go",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1037.0081934795123,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/confirm/r1244/b7/go",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0080188445893,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/confirm/r1244/b7/dotnet",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0076747602152,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/confirm/r1037/b8/dotnet",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1037.0033660265092,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/confirm/r1037/b8/go",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1037.0099326885372,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/confirm/r1244/b8/dotnet",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0083247585749,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/confirm/r1244/b8/go",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0068304164702,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/confirm/r1037/b9/go",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1037.0083226521476,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/confirm/r1037/b9/dotnet",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1037.0091390232744,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/confirm/r1244/b9/dotnet",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0026062078853,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/confirm/r1244/b9/go",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0038206882011,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/soak/r1037/b0/go",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1037.0013939320888,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "headline.mixed.gc-generous/soak/r1037/b0/dotnet",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1037.001042861827,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r500/b0/go",
+      "offered_rate": 500.0,
+      "achieved_rate": 500.0080939768561,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r500/b0/dotnet",
+      "offered_rate": 500.0,
+      "achieved_rate": 500.00593543295787,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r500/b1/go",
+      "offered_rate": 500.0,
+      "achieved_rate": 500.0086773005885,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r500/b1/dotnet",
+      "offered_rate": 500.0,
+      "achieved_rate": 500.0060233850615,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r500/b2/go",
+      "offered_rate": 500.0,
+      "achieved_rate": 500.0055604243359,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r500/b2/dotnet",
+      "offered_rate": 500.0,
+      "achieved_rate": 500.00791387525686,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r600/b0/dotnet",
+      "offered_rate": 600.0,
+      "achieved_rate": 600.0091202786303,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r600/b0/go",
+      "offered_rate": 600.0,
+      "achieved_rate": 600.0080041017746,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r600/b1/dotnet",
+      "offered_rate": 600.0,
+      "achieved_rate": 600.0091774153728,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r600/b1/go",
+      "offered_rate": 600.0,
+      "achieved_rate": 600.0105113291435,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r600/b2/dotnet",
+      "offered_rate": 600.0,
+      "achieved_rate": 600.0097018568742,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r600/b2/go",
+      "offered_rate": 600.0,
+      "achieved_rate": 600.0104111806513,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r720/b0/dotnet",
+      "offered_rate": 720.0,
+      "achieved_rate": 720.0127632942483,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r720/b0/go",
+      "offered_rate": 720.0,
+      "achieved_rate": 720.0079023807318,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r720/b1/dotnet",
+      "offered_rate": 720.0,
+      "achieved_rate": 720.012008828291,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r720/b1/go",
+      "offered_rate": 720.0,
+      "achieved_rate": 720.0119971759025,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r720/b2/dotnet",
+      "offered_rate": 720.0,
+      "achieved_rate": 720.0077942634978,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r720/b2/go",
+      "offered_rate": 720.0,
+      "achieved_rate": 720.0072255965122,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r864/b0/go",
+      "offered_rate": 864.0,
+      "achieved_rate": 864.0150246380683,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r864/b0/dotnet",
+      "offered_rate": 864.0,
+      "achieved_rate": 864.0119304999395,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r864/b1/go",
+      "offered_rate": 864.0,
+      "achieved_rate": 864.0149527867754,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r864/b1/dotnet",
+      "offered_rate": 864.0,
+      "achieved_rate": 864.0099557203167,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r864/b2/dotnet",
+      "offered_rate": 864.0,
+      "achieved_rate": 864.0100922786853,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r864/b2/go",
+      "offered_rate": 864.0,
+      "achieved_rate": 864.0133319921167,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r1037/b0/go",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1037.007050654146,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r1037/b0/dotnet",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1037.0024304744463,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r1037/b1/go",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1037.0063315199325,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r1037/b1/dotnet",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1037.006506092402,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r1037/b2/go",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1037.003543346049,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r1037/b2/dotnet",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1037.0064115859582,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r1244/b0/dotnet",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0074295855716,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r1244/b0/go",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.008552050825,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r1244/b1/dotnet",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0095335810947,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r1244/b1/go",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.009321071574,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r1244/b2/dotnet",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.009979572457,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r1244/b2/go",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0067603992386,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r1493/b0/dotnet",
+      "offered_rate": 1493.0,
+      "achieved_rate": 1493.0019615248339,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r1493/b0/go",
+      "offered_rate": 1493.0,
+      "achieved_rate": 1493.006362515168,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r1493/b1/dotnet",
+      "offered_rate": 1493.0,
+      "achieved_rate": 1493.000506612397,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r1493/b1/go",
+      "offered_rate": 1493.0,
+      "achieved_rate": 1493.0050385436373,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r1493/b2/go",
+      "offered_rate": 1493.0,
+      "achieved_rate": 1493.002775305534,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r1493/b2/dotnet",
+      "offered_rate": 1493.0,
+      "achieved_rate": 1482.4048851673683,
+      "ratio": 0.9929,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r1792/b0/dotnet",
+      "offered_rate": 1792.0,
+      "achieved_rate": 1792.0057903603033,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r1792/b0/go",
+      "offered_rate": 1792.0,
+      "achieved_rate": 1792.0033423151099,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r1792/b1/dotnet",
+      "offered_rate": 1792.0,
+      "achieved_rate": 1792.0047293394148,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r1792/b1/go",
+      "offered_rate": 1792.0,
+      "achieved_rate": 1792.0088434143083,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r1792/b2/dotnet",
+      "offered_rate": 1792.0,
+      "achieved_rate": 1792.0064588094124,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r1792/b2/go",
+      "offered_rate": 1792.0,
+      "achieved_rate": 1792.0086756665348,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r2150/b0/dotnet",
+      "offered_rate": 2150.0,
+      "achieved_rate": 2150.0092733483307,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r2150/b0/go",
+      "offered_rate": 2150.0,
+      "achieved_rate": 2150.0180222214854,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r2150/b1/dotnet",
+      "offered_rate": 2150.0,
+      "achieved_rate": 2150.0024387880526,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r2150/b1/go",
+      "offered_rate": 2150.0,
+      "achieved_rate": 2150.0030006583183,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r2150/b2/dotnet",
+      "offered_rate": 2150.0,
+      "achieved_rate": 2150.0040780847917,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r2150/b2/go",
+      "offered_rate": 2150.0,
+      "achieved_rate": 2150.0088037015094,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r2580/b0/go",
+      "offered_rate": 2580.0,
+      "achieved_rate": 2580.0067777182467,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r2580/b0/dotnet",
+      "offered_rate": 2580.0,
+      "achieved_rate": 2580.0251480667303,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r2580/b1/dotnet",
+      "offered_rate": 2580.0,
+      "achieved_rate": 2580.0097913613668,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r2580/b1/go",
+      "offered_rate": 2580.0,
+      "achieved_rate": 2580.0077053594578,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r2580/b2/dotnet",
+      "offered_rate": 2580.0,
+      "achieved_rate": 2580.0079764665907,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r2580/b2/go",
+      "offered_rate": 2580.0,
+      "achieved_rate": 2580.0079644136945,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r3096/b0/go",
+      "offered_rate": 3096.0,
+      "achieved_rate": 3096.0074540858773,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r3096/b0/dotnet",
+      "offered_rate": 3096.0,
+      "achieved_rate": 3096.0064003289253,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r3096/b1/dotnet",
+      "offered_rate": 3096.0,
+      "achieved_rate": 3096.011157998413,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r3096/b1/go",
+      "offered_rate": 3096.0,
+      "achieved_rate": 3096.0057333429163,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r3096/b2/dotnet",
+      "offered_rate": 3096.0,
+      "achieved_rate": 3096.007213937693,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r3096/b2/go",
+      "offered_rate": 3096.0,
+      "achieved_rate": 3096.007191887156,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r3715/b0/dotnet",
+      "offered_rate": 3715.0,
+      "achieved_rate": 3715.030417461673,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r3715/b0/go",
+      "offered_rate": 3715.0,
+      "achieved_rate": 3715.032819002385,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r3715/b1/go",
+      "offered_rate": 3715.0,
+      "achieved_rate": 3715.0305749183417,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r3715/b1/dotnet",
+      "offered_rate": 3715.0,
+      "achieved_rate": 3715.030389227211,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r3715/b2/go",
+      "offered_rate": 3715.0,
+      "achieved_rate": 3715.030714016428,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r3715/b2/dotnet",
+      "offered_rate": 3715.0,
+      "achieved_rate": 3715.010137271995,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r4458/b0/go",
+      "offered_rate": 4458.0,
+      "achieved_rate": 4458.025882112019,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r4458/b0/dotnet",
+      "offered_rate": 4458.0,
+      "achieved_rate": 4458.018634844744,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r4458/b1/dotnet",
+      "offered_rate": 4458.0,
+      "achieved_rate": 4458.055135373032,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r4458/b1/go",
+      "offered_rate": 4458.0,
+      "achieved_rate": 4458.05575181601,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r4458/b2/go",
+      "offered_rate": 4458.0,
+      "achieved_rate": 4458.034272925855,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r4458/b2/dotnet",
+      "offered_rate": 4458.0,
+      "achieved_rate": 4458.0554873767005,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r5350/b0/dotnet",
+      "offered_rate": 5350.0,
+      "achieved_rate": 5350.029109630619,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r5350/b0/go",
+      "offered_rate": 5350.0,
+      "achieved_rate": 5350.071482401885,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r5350/b1/dotnet",
+      "offered_rate": 5350.0,
+      "achieved_rate": 5350.025858055674,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r5350/b1/go",
+      "offered_rate": 5350.0,
+      "achieved_rate": 5350.028562737398,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r5350/b2/go",
+      "offered_rate": 5350.0,
+      "achieved_rate": 5350.024590898893,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r5350/b2/dotnet",
+      "offered_rate": 5350.0,
+      "achieved_rate": 5350.0683219553175,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r6420/b0/go",
+      "offered_rate": 6420.0,
+      "achieved_rate": 6420.059242166667,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r6420/b0/dotnet",
+      "offered_rate": 6420.0,
+      "achieved_rate": 6420.019194877136,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r6420/b1/go",
+      "offered_rate": 6420.0,
+      "achieved_rate": 6420.066838365497,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r6420/b1/dotnet",
+      "offered_rate": 6420.0,
+      "achieved_rate": 6420.062868878376,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r6420/b2/go",
+      "offered_rate": 6420.0,
+      "achieved_rate": 6420.063872272808,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r6420/b2/dotnet",
+      "offered_rate": 6420.0,
+      "achieved_rate": 6420.012326968171,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r7704/b0/go",
+      "offered_rate": 7704.0,
+      "achieved_rate": 7704.081906221538,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r7704/b0/dotnet",
+      "offered_rate": 7704.0,
+      "achieved_rate": 7704.106738312817,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r7704/b1/dotnet",
+      "offered_rate": 7704.0,
+      "achieved_rate": 7704.061131275674,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r7704/b1/go",
+      "offered_rate": 7704.0,
+      "achieved_rate": 7704.10709199852,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r7704/b2/go",
+      "offered_rate": 7704.0,
+      "achieved_rate": 7704.106994604941,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r7704/b2/dotnet",
+      "offered_rate": 7704.0,
+      "achieved_rate": 7704.121669434405,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r9244/b0/go",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9244.08324750778,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r9244/b0/dotnet",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9244.067196550239,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r9244/b1/dotnet",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9244.09374353513,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r9244/b1/go",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9244.071712932444,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r9244/b2/dotnet",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9244.066593562202,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r9244/b2/go",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9244.102487610624,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r11093/b0/go",
+      "offered_rate": 11093.0,
+      "achieved_rate": 7415.737244728611,
+      "ratio": 0.6685,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r11093/b0/dotnet",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.116150466996,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r11093/b1/go",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.112436400683,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r11093/b1/dotnet",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.195283429352,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r11093/b2/go",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.117417948044,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/ladder/r11093/b2/dotnet",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.123140798218,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/confirm/r9244/b0/go",
+      "offered_rate": 9244.0,
+      "achieved_rate": 8606.1969070298,
+      "ratio": 0.931,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/confirm/r9244/b0/dotnet",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9244.090993164024,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/confirm/r11093/b0/dotnet",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.112980608132,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/confirm/r11093/b0/go",
+      "offered_rate": 11093.0,
+      "achieved_rate": 10168.319299535855,
+      "ratio": 0.9166,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/confirm/r9244/b1/go",
+      "offered_rate": 9244.0,
+      "achieved_rate": 4462.669137114743,
+      "ratio": 0.4828,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/confirm/r9244/b1/dotnet",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9244.1010035348,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/confirm/r11093/b1/go",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.12034264942,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/confirm/r11093/b1/dotnet",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.115010094372,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/confirm/r9244/b2/dotnet",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9244.102807305193,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/confirm/r9244/b2/go",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9244.108356590146,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/confirm/r11093/b2/go",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.218121449421,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/confirm/r11093/b2/dotnet",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.200735350621,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/confirm/r9244/b3/dotnet",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9244.101786054453,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/confirm/r9244/b3/go",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9244.080860902166,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/confirm/r11093/b3/dotnet",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.108037245482,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/confirm/r11093/b3/go",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.11063451043,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/confirm/r9244/b4/go",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9244.101602249371,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/confirm/r9244/b4/dotnet",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9244.028218616559,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/confirm/r11093/b4/dotnet",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.198439686526,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/confirm/r11093/b4/go",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.211688344687,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/confirm/r9244/b5/dotnet",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9244.10267349568,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/confirm/r9244/b5/go",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9244.095810763292,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/confirm/r11093/b5/dotnet",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.098920641474,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/confirm/r11093/b5/go",
+      "offered_rate": 11093.0,
+      "achieved_rate": 10062.519095608483,
+      "ratio": 0.9071,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/confirm/r9244/b6/dotnet",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9244.057675093036,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/confirm/r9244/b6/go",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9244.087909099584,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/confirm/r11093/b6/go",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.121438927508,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/confirm/r11093/b6/dotnet",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.110621194957,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/confirm/r9244/b7/go",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9244.077940757334,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/confirm/r9244/b7/dotnet",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9244.023826548764,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/confirm/r11093/b7/dotnet",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.114638567982,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/confirm/r11093/b7/go",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.20991350834,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/confirm/r9244/b8/dotnet",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9244.102932717911,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/confirm/r9244/b8/go",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9244.102119384137,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/confirm/r11093/b8/dotnet",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.166948518172,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/confirm/r11093/b8/go",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.120859958795,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/confirm/r9244/b9/go",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9244.03045236026,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/confirm/r9244/b9/dotnet",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9244.007618015743,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/confirm/r11093/b9/go",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.20759824401,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/confirm/r11093/b9/dotnet",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.102569644365,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/soak/r9244/b0/dotnet",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9244.03874413195,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.ado/soak/r9244/b0/go",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9244.03869844822,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r500/b0/dotnet",
+      "offered_rate": 500.0,
+      "achieved_rate": 500.0084133332326,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r500/b0/go",
+      "offered_rate": 500.0,
+      "achieved_rate": 500.0080565798149,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r500/b1/dotnet",
+      "offered_rate": 500.0,
+      "achieved_rate": 500.00705636624986,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r500/b1/go",
+      "offered_rate": 500.0,
+      "achieved_rate": 500.0055961959674,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r500/b2/dotnet",
+      "offered_rate": 500.0,
+      "achieved_rate": 500.0070725250398,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r500/b2/go",
+      "offered_rate": 500.0,
+      "achieved_rate": 500.0080620591582,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r600/b0/go",
+      "offered_rate": 600.0,
+      "achieved_rate": 600.0074331270845,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r600/b0/dotnet",
+      "offered_rate": 600.0,
+      "achieved_rate": 600.0093788216016,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r600/b1/go",
+      "offered_rate": 600.0,
+      "achieved_rate": 600.0090204906134,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r600/b1/dotnet",
+      "offered_rate": 600.0,
+      "achieved_rate": 600.0080988643178,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r600/b2/go",
+      "offered_rate": 600.0,
+      "achieved_rate": 600.0099355095211,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r600/b2/dotnet",
+      "offered_rate": 600.0,
+      "achieved_rate": 600.0106718248097,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r720/b0/go",
+      "offered_rate": 720.0,
+      "achieved_rate": 720.0112288091169,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r720/b0/dotnet",
+      "offered_rate": 720.0,
+      "achieved_rate": 720.0110654753222,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r720/b1/go",
+      "offered_rate": 720.0,
+      "achieved_rate": 720.012110087683,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r720/b1/dotnet",
+      "offered_rate": 720.0,
+      "achieved_rate": 720.0094441898772,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r720/b2/go",
+      "offered_rate": 720.0,
+      "achieved_rate": 720.0112421955347,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r720/b2/dotnet",
+      "offered_rate": 720.0,
+      "achieved_rate": 720.0110190906369,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r864/b0/dotnet",
+      "offered_rate": 864.0,
+      "achieved_rate": 864.0141055270808,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r864/b0/go",
+      "offered_rate": 864.0,
+      "achieved_rate": 864.0134717196513,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r864/b1/go",
+      "offered_rate": 864.0,
+      "achieved_rate": 864.0151681822845,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r864/b1/dotnet",
+      "offered_rate": 864.0,
+      "achieved_rate": 864.0087427532663,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r864/b2/dotnet",
+      "offered_rate": 864.0,
+      "achieved_rate": 864.0147814352786,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r864/b2/go",
+      "offered_rate": 864.0,
+      "achieved_rate": 864.0098918764501,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r1037/b0/go",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1037.008940581223,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r1037/b0/dotnet",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1037.0064263288239,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r1037/b1/go",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1037.0096728387277,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r1037/b1/dotnet",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1037.0032984828083,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r1037/b2/go",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1037.0009542914866,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r1037/b2/dotnet",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1037.005726924619,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r1244/b0/go",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0087571167119,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r1244/b0/dotnet",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.010884462867,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r1244/b1/go",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0049950739901,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r1244/b1/dotnet",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0012578200385,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r1244/b2/dotnet",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0033765222834,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r1244/b2/go",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0025317329453,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r1493/b0/dotnet",
+      "offered_rate": 1493.0,
+      "achieved_rate": 1493.0076018964676,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r1493/b0/go",
+      "offered_rate": 1493.0,
+      "achieved_rate": 1493.0013259966859,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r1493/b1/go",
+      "offered_rate": 1493.0,
+      "achieved_rate": 1493.005011744107,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r1493/b1/dotnet",
+      "offered_rate": 1493.0,
+      "achieved_rate": 1493.0011406031047,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r1493/b2/go",
+      "offered_rate": 1493.0,
+      "achieved_rate": 1493.0038720184502,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r1493/b2/dotnet",
+      "offered_rate": 1493.0,
+      "achieved_rate": 1493.0021545514094,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r1792/b0/go",
+      "offered_rate": 1792.0,
+      "achieved_rate": 1792.0069591992926,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r1792/b0/dotnet",
+      "offered_rate": 1792.0,
+      "achieved_rate": 1792.0039643757036,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r1792/b1/dotnet",
+      "offered_rate": 1792.0,
+      "achieved_rate": 1792.008922366666,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r1792/b1/go",
+      "offered_rate": 1792.0,
+      "achieved_rate": 1792.0069231565412,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r1792/b2/go",
+      "offered_rate": 1792.0,
+      "achieved_rate": 1792.0075895799705,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r1792/b2/dotnet",
+      "offered_rate": 1792.0,
+      "achieved_rate": 1792.0098857664307,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r2150/b0/dotnet",
+      "offered_rate": 2150.0,
+      "achieved_rate": 2150.010133088899,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r2150/b0/go",
+      "offered_rate": 2150.0,
+      "achieved_rate": 2150.004186248543,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r2150/b1/dotnet",
+      "offered_rate": 2150.0,
+      "achieved_rate": 2150.0185511304826,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r2150/b1/go",
+      "offered_rate": 2150.0,
+      "achieved_rate": 2150.004708151977,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r2150/b2/dotnet",
+      "offered_rate": 2150.0,
+      "achieved_rate": 2150.018271321107,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r2150/b2/go",
+      "offered_rate": 2150.0,
+      "achieved_rate": 2150.018898934874,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r2580/b0/dotnet",
+      "offered_rate": 2580.0,
+      "achieved_rate": 2580.025906405787,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r2580/b0/go",
+      "offered_rate": 2580.0,
+      "achieved_rate": 2580.0124591590757,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r2580/b1/go",
+      "offered_rate": 2580.0,
+      "achieved_rate": 2580.0239745996782,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r2580/b1/dotnet",
+      "offered_rate": 2580.0,
+      "achieved_rate": 2580.0068811822453,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r2580/b2/go",
+      "offered_rate": 2580.0,
+      "achieved_rate": 2580.0110588252883,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r2580/b2/dotnet",
+      "offered_rate": 2580.0,
+      "achieved_rate": 2580.007000953218,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r3096/b0/dotnet",
+      "offered_rate": 3096.0,
+      "achieved_rate": 3096.002517661334,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r3096/b0/go",
+      "offered_rate": 3096.0,
+      "achieved_rate": 3096.005087619482,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r3096/b1/dotnet",
+      "offered_rate": 3096.0,
+      "achieved_rate": 3096.0126814509435,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r3096/b1/go",
+      "offered_rate": 3096.0,
+      "achieved_rate": 3096.0066589313024,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r3096/b2/go",
+      "offered_rate": 3096.0,
+      "achieved_rate": 3096.005548046142,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r3096/b2/dotnet",
+      "offered_rate": 3096.0,
+      "achieved_rate": 3096.0165673441948,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r3715/b0/go",
+      "offered_rate": 3715.0,
+      "achieved_rate": 3715.0114791943865,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r3715/b0/dotnet",
+      "offered_rate": 3715.0,
+      "achieved_rate": 3715.0294846410907,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r3715/b1/dotnet",
+      "offered_rate": 3715.0,
+      "achieved_rate": 3715.0025160473706,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r3715/b1/go",
+      "offered_rate": 3715.0,
+      "achieved_rate": 3715.03188689265,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r3715/b2/go",
+      "offered_rate": 3715.0,
+      "achieved_rate": 3715.0311012806637,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r3715/b2/dotnet",
+      "offered_rate": 3715.0,
+      "achieved_rate": 3715.0305795931267,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r4458/b0/dotnet",
+      "offered_rate": 4458.0,
+      "achieved_rate": 4458.022306584988,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r4458/b0/go",
+      "offered_rate": 4458.0,
+      "achieved_rate": 4458.02311920933,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r4458/b1/go",
+      "offered_rate": 4458.0,
+      "achieved_rate": 4458.0224745149735,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r4458/b1/dotnet",
+      "offered_rate": 4458.0,
+      "achieved_rate": 4458.0545685636525,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r4458/b2/go",
+      "offered_rate": 4458.0,
+      "achieved_rate": 4458.034164260639,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r4458/b2/dotnet",
+      "offered_rate": 4458.0,
+      "achieved_rate": 4458.023613248438,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r5350/b0/go",
+      "offered_rate": 5350.0,
+      "achieved_rate": 5350.024991259001,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r5350/b0/dotnet",
+      "offered_rate": 5350.0,
+      "achieved_rate": 5350.024907978,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r5350/b1/dotnet",
+      "offered_rate": 5350.0,
+      "achieved_rate": 5350.0685952787735,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r5350/b1/go",
+      "offered_rate": 5350.0,
+      "achieved_rate": 5350.069895245278,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r5350/b2/dotnet",
+      "offered_rate": 5350.0,
+      "achieved_rate": 5350.025020639738,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r5350/b2/go",
+      "offered_rate": 5350.0,
+      "achieved_rate": 5350.0513613039075,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r6420/b0/go",
+      "offered_rate": 6420.0,
+      "achieved_rate": 6419.98638728237,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r6420/b0/dotnet",
+      "offered_rate": 6420.0,
+      "achieved_rate": 6420.013167727284,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r6420/b1/dotnet",
+      "offered_rate": 6420.0,
+      "achieved_rate": 6420.015446846317,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r6420/b1/go",
+      "offered_rate": 6420.0,
+      "achieved_rate": 6420.057336774978,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r6420/b2/dotnet",
+      "offered_rate": 6420.0,
+      "achieved_rate": 6420.017480560166,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r6420/b2/go",
+      "offered_rate": 6420.0,
+      "achieved_rate": 6420.066631925397,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r7704/b0/go",
+      "offered_rate": 7704.0,
+      "achieved_rate": 7704.117716067073,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r7704/b0/dotnet",
+      "offered_rate": 7704.0,
+      "achieved_rate": 7704.0303765786,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r7704/b1/dotnet",
+      "offered_rate": 7704.0,
+      "achieved_rate": 7704.046020118901,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r7704/b1/go",
+      "offered_rate": 7704.0,
+      "achieved_rate": 7704.10323907957,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r7704/b2/go",
+      "offered_rate": 7704.0,
+      "achieved_rate": 7704.009706701463,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r7704/b2/dotnet",
+      "offered_rate": 7704.0,
+      "achieved_rate": 7704.103666403936,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r9244/b0/dotnet",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9244.098781158149,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r9244/b0/go",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9243.977017659254,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r9244/b1/go",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9244.031905137766,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r9244/b1/dotnet",
+      "offered_rate": 9244.0,
+      "achieved_rate": 8964.860963878373,
+      "ratio": 0.9698,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r9244/b2/go",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9244.022117404309,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r9244/b2/dotnet",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9244.02741323039,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r11093/b0/dotnet",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.10787093562,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r11093/b0/go",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.114792854694,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r11093/b1/dotnet",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.205456498254,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r11093/b1/go",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.098538589536,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r11093/b2/dotnet",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.099001158876,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/ladder/r11093/b2/go",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.122227556396,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/confirm/r9244/b0/go",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9244.099805874792,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/confirm/r9244/b0/dotnet",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9244.013869359933,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/confirm/r11093/b0/go",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.111870926708,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/confirm/r11093/b0/dotnet",
+      "offered_rate": 11093.0,
+      "achieved_rate": 10702.47501908608,
+      "ratio": 0.9648,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/confirm/r9244/b1/dotnet",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9244.028129334623,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/confirm/r9244/b1/go",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9243.99796414028,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/confirm/r11093/b1/dotnet",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.107937032053,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/confirm/r11093/b1/go",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.12025945099,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/confirm/r9244/b2/dotnet",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9243.985857942904,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/confirm/r9244/b2/go",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9244.086396910827,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/confirm/r11093/b2/go",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.123390208753,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/confirm/r11093/b2/dotnet",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.107105603705,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/confirm/r9244/b3/dotnet",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9244.101224624706,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/confirm/r9244/b3/go",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9244.113965815011,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/confirm/r11093/b3/go",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.108636822297,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/confirm/r11093/b3/dotnet",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.119173156945,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/confirm/r9244/b4/go",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9244.100107157858,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/confirm/r9244/b4/dotnet",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9244.029226370163,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/confirm/r11093/b4/go",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.11556465808,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/confirm/r11093/b4/dotnet",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.106017832337,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/confirm/r9244/b5/dotnet",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9243.954892579257,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/confirm/r9244/b5/go",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9244.108190810977,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/confirm/r11093/b5/go",
+      "offered_rate": 11093.0,
+      "achieved_rate": 4423.418700578882,
+      "ratio": 0.3988,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/confirm/r11093/b5/dotnet",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.107983623104,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/confirm/r9244/b6/dotnet",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9244.028506829336,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/confirm/r9244/b6/go",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9244.099826751219,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/confirm/r11093/b6/go",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.120669064605,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/confirm/r11093/b6/dotnet",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.095537340108,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/confirm/r9244/b7/go",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9244.02906182637,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/confirm/r9244/b7/dotnet",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9244.030149001826,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/confirm/r11093/b7/go",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.12325293127,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/confirm/r11093/b7/dotnet",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.112200854459,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/confirm/r9244/b8/dotnet",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9243.981074296888,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/confirm/r9244/b8/go",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9244.101285251105,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/confirm/r11093/b8/dotnet",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.198185125973,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/confirm/r11093/b8/go",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.12099899263,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/confirm/r9244/b9/go",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9243.960293897957,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/confirm/r9244/b9/dotnet",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9244.031650387471,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/confirm/r11093/b9/dotnet",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.111672729718,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/confirm/r11093/b9/go",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.113153938097,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/soak/r9244/b0/dotnet",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9244.03462826489,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.dapper/soak/r9244/b0/go",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9244.01234684315,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r500/b0/go",
+      "offered_rate": 500.0,
+      "achieved_rate": 500.0078174013883,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r500/b0/dotnet",
+      "offered_rate": 500.0,
+      "achieved_rate": 500.0070027564091,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r500/b1/go",
+      "offered_rate": 500.0,
+      "achieved_rate": 500.006024914265,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r500/b1/dotnet",
+      "offered_rate": 500.0,
+      "achieved_rate": 500.00656757793166,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r500/b2/dotnet",
+      "offered_rate": 500.0,
+      "achieved_rate": 500.00691704568976,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r500/b2/go",
+      "offered_rate": 500.0,
+      "achieved_rate": 500.0063680311026,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r600/b0/dotnet",
+      "offered_rate": 600.0,
+      "achieved_rate": 600.0077228394025,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r600/b0/go",
+      "offered_rate": 600.0,
+      "achieved_rate": 600.010524579608,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r600/b1/go",
+      "offered_rate": 600.0,
+      "achieved_rate": 600.0080074668645,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r600/b1/dotnet",
+      "offered_rate": 600.0,
+      "achieved_rate": 600.0066473886455,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r600/b2/go",
+      "offered_rate": 600.0,
+      "achieved_rate": 600.0076939586604,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r600/b2/dotnet",
+      "offered_rate": 600.0,
+      "achieved_rate": 600.0076641947861,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r720/b0/go",
+      "offered_rate": 720.0,
+      "achieved_rate": 720.0075926435226,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r720/b0/dotnet",
+      "offered_rate": 720.0,
+      "achieved_rate": 720.0109677110678,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r720/b1/dotnet",
+      "offered_rate": 720.0,
+      "achieved_rate": 720.0103717554052,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r720/b1/go",
+      "offered_rate": 720.0,
+      "achieved_rate": 720.0076183466092,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r720/b2/go",
+      "offered_rate": 720.0,
+      "achieved_rate": 720.0085844283494,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r720/b2/dotnet",
+      "offered_rate": 720.0,
+      "achieved_rate": 720.0079058826398,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r864/b0/dotnet",
+      "offered_rate": 864.0,
+      "achieved_rate": 864.0091881329093,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r864/b0/go",
+      "offered_rate": 864.0,
+      "achieved_rate": 864.0148669886142,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r864/b1/dotnet",
+      "offered_rate": 864.0,
+      "achieved_rate": 864.0089160176076,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r864/b1/go",
+      "offered_rate": 864.0,
+      "achieved_rate": 864.0121601287419,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r864/b2/dotnet",
+      "offered_rate": 864.0,
+      "achieved_rate": 864.0098056040833,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r864/b2/go",
+      "offered_rate": 864.0,
+      "achieved_rate": 864.0081219321461,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r1037/b0/go",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1037.0070466357163,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r1037/b0/dotnet",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1037.0070800448548,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r1037/b1/go",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1037.0040582548902,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r1037/b1/dotnet",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1036.9878557795046,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r1037/b2/dotnet",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1037.0066870512042,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r1037/b2/go",
+      "offered_rate": 1037.0,
+      "achieved_rate": 1037.0044511082804,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r1244/b0/go",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0042767934033,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r1244/b0/dotnet",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0012141555517,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r1244/b1/go",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0068255751837,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r1244/b1/dotnet",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0064817713726,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r1244/b2/dotnet",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0093595739522,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r1244/b2/go",
+      "offered_rate": 1244.0,
+      "achieved_rate": 1244.0069788791513,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r1493/b0/go",
+      "offered_rate": 1493.0,
+      "achieved_rate": 1493.0035163343234,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r1493/b0/dotnet",
+      "offered_rate": 1493.0,
+      "achieved_rate": 1493.0005155952863,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r1493/b1/dotnet",
+      "offered_rate": 1493.0,
+      "achieved_rate": 1493.0011244413554,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r1493/b1/go",
+      "offered_rate": 1493.0,
+      "achieved_rate": 1493.0018576675614,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r1493/b2/go",
+      "offered_rate": 1493.0,
+      "achieved_rate": 1493.0011999623896,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r1493/b2/dotnet",
+      "offered_rate": 1493.0,
+      "achieved_rate": 1493.0076571003983,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r1792/b0/go",
+      "offered_rate": 1792.0,
+      "achieved_rate": 1792.0064723092432,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r1792/b0/dotnet",
+      "offered_rate": 1792.0,
+      "achieved_rate": 1792.0108757487633,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r1792/b1/go",
+      "offered_rate": 1792.0,
+      "achieved_rate": 1792.0046422736139,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r1792/b1/dotnet",
+      "offered_rate": 1792.0,
+      "achieved_rate": 1792.0039137066808,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r1792/b2/go",
+      "offered_rate": 1792.0,
+      "achieved_rate": 1792.0056148170365,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r1792/b2/dotnet",
+      "offered_rate": 1792.0,
+      "achieved_rate": 1792.0032510821648,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r2150/b0/dotnet",
+      "offered_rate": 2150.0,
+      "achieved_rate": 2150.002639665741,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r2150/b0/go",
+      "offered_rate": 2150.0,
+      "achieved_rate": 2150.0046231370243,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r2150/b1/go",
+      "offered_rate": 2150.0,
+      "achieved_rate": 2150.0015902677565,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r2150/b1/dotnet",
+      "offered_rate": 2150.0,
+      "achieved_rate": 2150.00191351962,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r2150/b2/dotnet",
+      "offered_rate": 2150.0,
+      "achieved_rate": 2150.016155902234,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r2150/b2/go",
+      "offered_rate": 2150.0,
+      "achieved_rate": 2150.0179469702266,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r2580/b0/go",
+      "offered_rate": 2580.0,
+      "achieved_rate": 2580.0078114310477,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r2580/b0/dotnet",
+      "offered_rate": 2580.0,
+      "achieved_rate": 2580.027574748981,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r2580/b1/dotnet",
+      "offered_rate": 2580.0,
+      "achieved_rate": 2580.023071361811,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r2580/b1/go",
+      "offered_rate": 2580.0,
+      "achieved_rate": 2580.0065239962582,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r2580/b2/go",
+      "offered_rate": 2580.0,
+      "achieved_rate": 2580.0083360638423,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r2580/b2/dotnet",
+      "offered_rate": 2580.0,
+      "achieved_rate": 2580.027936235091,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r3096/b0/dotnet",
+      "offered_rate": 3096.0,
+      "achieved_rate": 3096.024181264666,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r3096/b0/go",
+      "offered_rate": 3096.0,
+      "achieved_rate": 3096.003735251786,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r3096/b1/dotnet",
+      "offered_rate": 3096.0,
+      "achieved_rate": 3096.004631702063,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r3096/b1/go",
+      "offered_rate": 3096.0,
+      "achieved_rate": 3096.0060755877626,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r3096/b2/dotnet",
+      "offered_rate": 3096.0,
+      "achieved_rate": 3096.031189319184,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r3096/b2/go",
+      "offered_rate": 3096.0,
+      "achieved_rate": 3096.0299738604435,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r3715/b0/dotnet",
+      "offered_rate": 3715.0,
+      "achieved_rate": 3715.0297653757348,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r3715/b0/go",
+      "offered_rate": 3715.0,
+      "achieved_rate": 3715.0130096021576,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r3715/b1/go",
+      "offered_rate": 3715.0,
+      "achieved_rate": 3715.033465919261,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r3715/b1/dotnet",
+      "offered_rate": 3715.0,
+      "achieved_rate": 3715.0299870100075,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r3715/b2/go",
+      "offered_rate": 3715.0,
+      "achieved_rate": 3715.0045609723757,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r3715/b2/dotnet",
+      "offered_rate": 3715.0,
+      "achieved_rate": 3715.034010857742,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r4458/b0/go",
+      "offered_rate": 4458.0,
+      "achieved_rate": 4458.022201868902,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r4458/b0/dotnet",
+      "offered_rate": 4458.0,
+      "achieved_rate": 4458.018686796076,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r4458/b1/go",
+      "offered_rate": 4458.0,
+      "achieved_rate": 4458.032636781207,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r4458/b1/dotnet",
+      "offered_rate": 4458.0,
+      "achieved_rate": 4458.04462752257,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r4458/b2/go",
+      "offered_rate": 4458.0,
+      "achieved_rate": 4458.056989792139,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r4458/b2/dotnet",
+      "offered_rate": 4458.0,
+      "achieved_rate": 4458.056091151355,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r5350/b0/go",
+      "offered_rate": 5350.0,
+      "achieved_rate": 5350.027758533512,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r5350/b0/dotnet",
+      "offered_rate": 5350.0,
+      "achieved_rate": 5350.024801825213,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r5350/b1/dotnet",
+      "offered_rate": 5350.0,
+      "achieved_rate": 5350.075747474743,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r5350/b1/go",
+      "offered_rate": 5350.0,
+      "achieved_rate": 5350.027973115665,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r5350/b2/dotnet",
+      "offered_rate": 5350.0,
+      "achieved_rate": 5350.0265393381405,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r5350/b2/go",
+      "offered_rate": 5350.0,
+      "achieved_rate": 5350.02645761308,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r6420/b0/go",
+      "offered_rate": 6420.0,
+      "achieved_rate": 6420.0632872560545,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r6420/b0/dotnet",
+      "offered_rate": 6420.0,
+      "achieved_rate": 6420.051119068531,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r6420/b1/dotnet",
+      "offered_rate": 6420.0,
+      "achieved_rate": 6420.05615546907,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r6420/b1/go",
+      "offered_rate": 6420.0,
+      "achieved_rate": 6420.034709746215,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r6420/b2/go",
+      "offered_rate": 6420.0,
+      "achieved_rate": 6420.060927863467,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r6420/b2/dotnet",
+      "offered_rate": 6420.0,
+      "achieved_rate": 6420.058597246376,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r7704/b0/go",
+      "offered_rate": 7704.0,
+      "achieved_rate": 7704.0469153696295,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r7704/b0/dotnet",
+      "offered_rate": 7704.0,
+      "achieved_rate": 7704.093368901466,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r7704/b1/go",
+      "offered_rate": 7704.0,
+      "achieved_rate": 7704.106772724785,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r7704/b1/dotnet",
+      "offered_rate": 7704.0,
+      "achieved_rate": 7704.088648754032,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r7704/b2/go",
+      "offered_rate": 7704.0,
+      "achieved_rate": 7704.108560606687,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r7704/b2/dotnet",
+      "offered_rate": 7704.0,
+      "achieved_rate": 7704.073522694669,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r9244/b0/dotnet",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9212.150814536768,
+      "ratio": 0.9966,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r9244/b0/go",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9244.020050135397,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r9244/b1/go",
+      "offered_rate": 9244.0,
+      "achieved_rate": 7859.776646366359,
+      "ratio": 0.8503,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r9244/b1/dotnet",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9244.097477498897,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r9244/b2/go",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9244.01120285108,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r9244/b2/dotnet",
+      "offered_rate": 9244.0,
+      "achieved_rate": 9244.029574716169,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r11093/b0/go",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.107054489403,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r11093/b0/dotnet",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.03232556967,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r11093/b1/go",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.121215585907,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r11093/b1/dotnet",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.117994235563,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r11093/b2/go",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.117140620096,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r11093/b2/dotnet",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.096534438531,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r13312/b0/dotnet",
+      "offered_rate": 13312.0,
+      "achieved_rate": 13312.02338258916,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r13312/b0/go",
+      "offered_rate": 13312.0,
+      "achieved_rate": 7792.304676878672,
+      "ratio": 0.5854,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r13312/b1/dotnet",
+      "offered_rate": 13312.0,
+      "achieved_rate": 13312.030371184708,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r13312/b1/go",
+      "offered_rate": 13312.0,
+      "achieved_rate": 13312.033870806701,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r13312/b2/go",
+      "offered_rate": 13312.0,
+      "achieved_rate": 13312.035772542022,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/ladder/r13312/b2/dotnet",
+      "offered_rate": 13312.0,
+      "achieved_rate": 13312.026762516924,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/confirm/r11093/b0/go",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.122784061668,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/confirm/r11093/b0/dotnet",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.199165309767,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/confirm/r13312/b0/go",
+      "offered_rate": 13312.0,
+      "achieved_rate": 13311.984481824793,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/confirm/r13312/b0/dotnet",
+      "offered_rate": 13312.0,
+      "achieved_rate": 13311.933363300346,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/confirm/r11093/b1/go",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.113685021146,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/confirm/r11093/b1/dotnet",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.117587210541,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/confirm/r13312/b1/dotnet",
+      "offered_rate": 13312.0,
+      "achieved_rate": 10852.534338375921,
+      "ratio": 0.8152,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/confirm/r13312/b1/go",
+      "offered_rate": 13312.0,
+      "achieved_rate": 13312.019685952675,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/confirm/r11093/b2/go",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.115072678473,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/confirm/r11093/b2/dotnet",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.111778206754,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/confirm/r13312/b2/dotnet",
+      "offered_rate": 13312.0,
+      "achieved_rate": 13312.01144482248,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/confirm/r13312/b2/go",
+      "offered_rate": 13312.0,
+      "achieved_rate": 13312.029839258303,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/confirm/r11093/b3/dotnet",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.108302180188,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/confirm/r11093/b3/go",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.120480943702,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/confirm/r13312/b3/dotnet",
+      "offered_rate": 13312.0,
+      "achieved_rate": 12477.953825948609,
+      "ratio": 0.9373,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/confirm/r13312/b3/go",
+      "offered_rate": 13312.0,
+      "achieved_rate": 13311.984470176807,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/confirm/r11093/b4/dotnet",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.103072336758,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/confirm/r11093/b4/go",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.117994605333,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/confirm/r13312/b4/go",
+      "offered_rate": 13312.0,
+      "achieved_rate": 13312.002180787727,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/confirm/r13312/b4/dotnet",
+      "offered_rate": 13312.0,
+      "achieved_rate": 13286.270257428732,
+      "ratio": 0.9981,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/confirm/r11093/b5/dotnet",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.09921600753,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/confirm/r11093/b5/go",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.115107621781,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/confirm/r13312/b5/dotnet",
+      "offered_rate": 13312.0,
+      "achieved_rate": 13038.383813300436,
+      "ratio": 0.9794,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/confirm/r13312/b5/go",
+      "offered_rate": 13312.0,
+      "achieved_rate": 13312.038463127355,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/confirm/r11093/b6/go",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.115099578888,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/confirm/r11093/b6/dotnet",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.11396272014,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/confirm/r13312/b6/dotnet",
+      "offered_rate": 13312.0,
+      "achieved_rate": 13312.04320997621,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/confirm/r13312/b6/go",
+      "offered_rate": 13312.0,
+      "achieved_rate": 13312.03500898574,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/confirm/r11093/b7/dotnet",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.206717251287,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/confirm/r11093/b7/go",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.115602559552,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/confirm/r13312/b7/dotnet",
+      "offered_rate": 13312.0,
+      "achieved_rate": 13312.036044773207,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/confirm/r13312/b7/go",
+      "offered_rate": 13312.0,
+      "achieved_rate": 13312.021578699521,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/confirm/r11093/b8/go",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.120472993629,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/confirm/r11093/b8/dotnet",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.080490229573,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/confirm/r13312/b8/dotnet",
+      "offered_rate": 13312.0,
+      "achieved_rate": 12075.609956798462,
+      "ratio": 0.9071,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/confirm/r13312/b8/go",
+      "offered_rate": 13312.0,
+      "achieved_rate": 13312.039776246083,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/confirm/r11093/b9/dotnet",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.11975203304,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/confirm/r11093/b9/go",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.118655570399,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/confirm/r13312/b9/dotnet",
+      "offered_rate": 13312.0,
+      "achieved_rate": 13312.003175930502,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/confirm/r13312/b9/go",
+      "offered_rate": 13312.0,
+      "achieved_rate": 10293.18052050297,
+      "ratio": 0.7732,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/soak/r11093/b0/dotnet",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.115380900605,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    },
+    {
+      "probe_id": "variant.prepared-parity/soak/r11093/b0/go",
+      "offered_rate": 11093.0,
+      "achieved_rate": 11093.116659124762,
+      "ratio": 1.0,
+      "max_workers": 512,
+      "connections": 64,
+      "timeout_s": 5.0
+    }
+  ],
+  "throttle_counters": [
+    {
+      "container": "ledgerline-sut-dotnet-1",
+      "nr_throttled": 0,
+      "throttled_usec": 0,
+      "windows": 309,
+      "source": "cpu.stat cumulative nr_throttled/throttled_usec read at each probe window's end and summed over probes (per-container LIFETIME counters: each term includes that container's warmup and head-of-window discard, not only the measured window)"
+    },
+    {
+      "container": "ledgerline-sut-go-1",
+      "nr_throttled": 0,
+      "throttled_usec": 0,
+      "windows": 309,
+      "source": "cpu.stat cumulative nr_throttled/throttled_usec read at each probe window's end and summed over probes (per-container LIFETIME counters: each term includes that container's warmup and head-of-window discard, not only the measured window)"
+    }
+  ],
+  "fault_counts": [
+    {
+      "container": "ledgerline-sut-dotnet-1",
+      "major_faults": 0,
+      "minor_faults": 65065637,
+      "windows": 309,
+      "source": "memory.stat pgmajfault/pgfault deltas"
+    },
+    {
+      "container": "ledgerline-sut-go-1",
+      "major_faults": 12,
+      "minor_faults": 36884689,
+      "windows": 309,
+      "source": "memory.stat pgmajfault/pgfault deltas"
+    }
+  ],
+  "resource_deltas": [
+    {
+      "container": "ledgerline-sut-dotnet-1",
+      "cpu_usage_usec_delta": 64508403102,
+      "mem_anon_p99_bytes": 391475200,
+      "mem_peak_bytes": 1543073792,
+      "windows": 309,
+      "source": "cgroup v2 per-probe windows (summed cpu, max memory)"
+    },
+    {
+      "container": "ledgerline-sut-go-1",
+      "cpu_usage_usec_delta": 20072024744,
+      "mem_anon_p99_bytes": 10181341184,
+      "mem_peak_bytes": 10847191040,
+      "windows": 309,
+      "source": "cgroup v2 per-probe windows (summed cpu, max memory)"
+    }
+  ],
+  "aggregate_provenance": {
+    "achieved_vs_offered": "vegeta achieved rate vs offered rate, one row per probe",
+    "throttle_counters": "cpu.stat cumulative nr_throttled/throttled_usec read at each probe window's end and summed over probes (per-container LIFETIME counters: each term includes that container's warmup and head-of-window discard, not only the measured window)",
+    "fault_counts": "memory.stat pgmajfault/pgfault deltas over the measured windows",
+    "resource_deltas": "cgroup v2 per-probe windows (summed cpu, max memory)"
+  },
+  "cache_stats": {
+    "keyspace_hits": 86612237,
+    "keyspace_misses": 20765032,
+    "hit_rate": 0.806616128409822,
+    "windows": 618,
+    "source": "redis INFO keyspace_hits/misses deltas over measured windows",
+    "note": "target by construction: 0.8"
+  },
+  "errors": {
+    "count": 906242,
+    "rate": 0.0025266496912597805,
+    "total_requests": 358673386,
+    "status_codes": {
+      "0": 906235,
+      "200": 304126176,
+      "201": 53640968,
+      "500": 7
+    },
+    "probe_summaries": 618,
+    "source": "vegeta per-probe report status_codes over all measured windows"
+  },
+  "resource_accounting": "enabled",
+  "finalization_error": null
+}

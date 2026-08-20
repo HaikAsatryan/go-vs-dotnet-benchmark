@@ -1,0 +1,70 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  bench:
+    name: bench (runner + validation + analysis)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      # Docker-marked harness tests are exercised by `make smoke`, not CI;
+      # live equivalence tests skip without LEDGER_*_URL. This job proves the
+      # pure-logic surface: runner, ledger/resume, stats, goldens, normalizer.
+      - run: uv sync
+        working-directory: bench
+      - run: uv run ruff check .
+        working-directory: bench
+      # The analysis suites (isotonic fit, PAVA, Mann-Kendall, paired CI, report
+      # assembly) import numpy at module top level and their conftest SKIPS
+      # COLLECTION when the stack is absent, so a missing dependency makes the
+      # job go green with 68 fewer tests. Assert the floor so that cannot happen
+      # silently again.
+      - name: collected test count floor
+        run: |
+          n=$(uv run pytest -q -m "not docker" --collect-only 2>/dev/null | grep -oE '^[0-9]+ tests collected' | grep -oE '^[0-9]+')
+          echo "collected: $n"
+          if [ -z "$n" ] || [ "$n" -lt 340 ]; then echo "expected >= 340 collected tests"; exit 1; fi
+        working-directory: bench
+      - run: uv run pytest -q -m "not docker"
+        working-directory: bench
+
+  go:
+    name: go (service + seeder)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: services/go/go.mod
+      - name: gofmt
+        run: |
+          fmt=$(gofmt -l services/go seed)
+          if [ -n "$fmt" ]; then echo "gofmt needed:"; echo "$fmt"; exit 1; fi
+      - run: go vet ./...
+        working-directory: services/go
+      - run: go test ./...
+        working-directory: services/go
+      - run: go vet ./...
+        working-directory: seed
+      - run: go test ./...
+        working-directory: seed
+
+  dotnet:
+    name: dotnet (service)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+      # .editorconfig pins 3-space C# indentation and LF; without it `dotnet format`
+      # rewrites every file to its 4-space default.
+      - run: dotnet format --verify-no-changes
+        working-directory: services/dotnet
+      - run: dotnet test -c Release Ledgerline.Tests
+        working-directory: services/dotnet

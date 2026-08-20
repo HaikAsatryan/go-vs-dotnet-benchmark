@@ -1,0 +1,14 @@
+{
+  "container": "ledgerline-sut-dotnet-1",
+  "enabled": true,
+  "cpu_usage_delta_usec": 389535141,
+  "nr_throttled_end": 0,
+  "throttled_usec_end": 0,
+  "mem_anon_p99": 102658048,
+  "mem_peak": 1354903552,
+  "mem_file_end": 1235800064,
+  "oom_events": 0,
+  "major_faults_delta": 0,
+  "minor_faults_delta": 435728,
+  "note": ""
+}

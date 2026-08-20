@@ -1,0 +1,7 @@
+{
+  "keyspace_hits": 67454,
+  "keyspace_misses": 25376,
+  "hit_rate": 0.7266400947969407,
+  "source": "redis INFO stats delta over the measured window",
+  "note": ""
+}

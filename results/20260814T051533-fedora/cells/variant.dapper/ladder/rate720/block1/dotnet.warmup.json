@@ -1,0 +1,73 @@
+{
+  "language": "dotnet",
+  "rate": 618,
+  "elapsed_seconds": 184.87102712198975,
+  "under_warmed": false,
+  "gates": [
+    {
+      "name": "per_endpoint_min_calls",
+      "passed": true,
+      "status": "measured",
+      "at_seconds": null,
+      "detail": {
+        "shortfall": {}
+      }
+    },
+    {
+      "name": "p99_flat",
+      "passed": true,
+      "status": "measured",
+      "at_seconds": null,
+      "detail": {
+        "samples": 30
+      }
+    },
+    {
+      "name": "p999_flat",
+      "passed": true,
+      "status": "measured",
+      "at_seconds": null,
+      "detail": {
+        "samples": 30
+      }
+    },
+    {
+      "name": "gc_steady",
+      "passed": true,
+      "status": "measured",
+      "at_seconds": null,
+      "detail": {
+        "samples": 30
+      }
+    },
+    {
+      "name": "pools_warm",
+      "passed": true,
+      "status": "measured",
+      "at_seconds": null,
+      "detail": {}
+    },
+    {
+      "name": "hot_set_touched",
+      "passed": false,
+      "status": "not_implemented",
+      "at_seconds": null,
+      "detail": {
+        "note": "spec/slo.yaml declares warmup gate 'hot_set_touched'; the runner does not implement it. Recorded as not_implemented so its absence is visible; it neither passes nor flags the probe."
+      }
+    },
+    {
+      "name": "major_faults_asserted_equal",
+      "passed": false,
+      "status": "not_implemented",
+      "at_seconds": null,
+      "detail": {
+        "note": "spec/slo.yaml declares warmup gate 'major_faults_asserted_equal'; the runner does not implement it. Recorded as not_implemented so its absence is visible; it neither passes nor flags the probe."
+      }
+    }
+  ],
+  "final_db_pool_total": 24,
+  "final_db_pool_max": 24,
+  "major_faults": 0,
+  "finished_utc": "2026-08-15T19:42:24.680537Z"
+}

@@ -1,0 +1,14 @@
+{
+  "container": "ledgerline-sut-go-1",
+  "enabled": true,
+  "cpu_usage_delta_usec": 13094609,
+  "nr_throttled_end": 0,
+  "throttled_usec_end": 0,
+  "mem_anon_p99": 15495168,
+  "mem_peak": 191471616,
+  "mem_file_end": 166322176,
+  "oom_events": 0,
+  "major_faults_delta": 0,
+  "minor_faults_delta": 6795,
+  "note": ""
+}

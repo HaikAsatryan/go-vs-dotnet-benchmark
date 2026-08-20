@@ -1,0 +1,7 @@
+# Build artifacts (the committed EF compiled model under Data/CompiledModels is NOT ignored).
+bin/
+obj/
+*.user
+
+# Local publish output
+/publish/

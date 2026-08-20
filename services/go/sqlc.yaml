@@ -1,0 +1,18 @@
+version: "2"
+sql:
+  - engine: postgresql
+    schema: "../../spec/schema.sql"
+    queries: "../../spec/db-access.sql"
+    gen:
+      go:
+        package: "gen"
+        out: "internal/db/gen"
+        sql_package: "pgx/v5"
+        emit_json_tags: false
+        emit_prepared_queries: false
+        emit_interface: true
+        emit_pointers_for_null_types: true
+        emit_exact_table_names: false
+        overrides:
+          - db_type: "bigint"
+            go_type: "int64"

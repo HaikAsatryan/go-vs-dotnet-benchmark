@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+title: "Ledgerline: a Go 1.26 vs .NET 10 benchmark on a realistic backend workload"
+message: "If you quote a number from this benchmark, please cite it and say which run it came from."
+type: dataset
+authors:
+  - family-names: Asatryan
+    given-names: Haik
+abstract: >-
+  The same invoicing API, specified once in a frozen spec/ and implemented twice, in Go
+  1.26 (net/http, sqlc and hand-written pgx) and .NET 10 (Minimal API, EF Core), against a
+  shared PostgreSQL 18.4 and Redis. The measured quantity is cost at a fixed latency
+  promise: CPU-ms and steady-state memory per request at the rate where mixed-workload p99
+  crosses 20 ms, read from cgroup v2. Load is open-loop and coordinated-omission-safe. The
+  published run is 20260814T051533-fedora, config hash
+  7889756b00193358a813ff55c42f3e1e806a7cee3bc5d26b65049420b0ec9aaf.
+keywords:
+  - benchmark
+  - go
+  - dotnet
+  - performance
+  - postgresql
+  - cgroups
+license: MIT
+date-released: "2026-08-20"

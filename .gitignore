@@ -1,0 +1,49 @@
+# Ledgerline: repo-root ignores. Philosophy: commit small text/JSON run
+# manifests + summaries; never commit per-run scratch (vegeta target fixtures,
+# raw .bin attack logs, full DB dumps). Those are not published; see results/README.md.
+
+# --- results/ scratch ------------------------------------------------------
+# Per-run IO scratch: vegeta targets + request bodies the runner stages before
+# each attack. Big, regenerable, never a data source.
+results/**/io/
+# Capacity-gate request-body fixtures (staged outside io/, same scratch nature).
+results/**/bodies/
+# Raw attack logs / binary captures and DB dumps (regenerable, not published).
+results/**/*.bin
+results/**/*.dump
+# Raw per-window traces: cgroup 50 ms cpu/mem samples + per-second p99 series.
+# Tens of MB per run, regenerable-grade detail; the committed *.summary.json
+# roll-ups carry the headline, and CHECKSUMS.committed.sha256 covers exactly what
+# IS published (see results/README.md for the artifact policy). Not published.
+results/**/*.csv
+# Capacity-gate vegeta targets fixture (staged scratch, same nature as bodies/).
+results/**/capacity-gate/targets.txt
+# Keep: manifests, *.summary.json/*.warmup.json roll-ups, report/, ledger.json,
+# verdict.json, doctor.json, CHECKSUMS: small text summaries committed.
+# Rehearsal + smoke runs are never a data source: only the published full
+# measured run is committed (see results/README.md). Smoke runs are matched by
+# prefix; anything else under results/ is committed unless a rule above excludes
+# it, so a future published run cannot be ignored by accident.
+results/smoke-*/
+
+# --- bench (Python runner) -------------------------------------------------
+bench/.venv/
+bench/**/__pycache__/
+bench/.pytest_cache/
+*.pyc
+
+# --- services/dotnet build output ------------------------------------------
+services/dotnet/bin/
+services/dotnet/obj/
+services/dotnet/Ledgerline.Tests/bin/
+services/dotnet/Ledgerline.Tests/obj/
+
+# --- editor / IDE ----------------------------------------------------------
+.vs/
+.vscode/
+.idea/
+*.user
+
+# --- OS noise --------------------------------------------------------------
+Thumbs.db
+.DS_Store
