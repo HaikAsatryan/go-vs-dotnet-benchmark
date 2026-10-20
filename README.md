@@ -61,6 +61,9 @@ Full tables: [`results/20260814T051533-fedora/report/report.md`](results/2026081
 Everything the run does **not** establish is listed there and in
 [`results/README.md`](results/README.md); read that before quoting a number.
 
+Corrections found after publication, and my plan for the next run:
+[`docs/NEXT-ROUND.md`](docs/NEXT-ROUND.md). Read it before quoting a capacity number.
+
 Narrative write-up: **[I'm a .NET Developer. I Spent Two Months Benchmarking Go vs C#
 and I Didn't Like the Answer.](https://dev.to/haikasatryan/im-a-net-developer-i-spent-two-months-benchmarking-go-vs-c-and-i-didnt-like-the-answer-31fm)**
 
